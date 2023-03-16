@@ -1,0 +1,54 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model cars_for_sale {
+  id           Int            @id @default(autoincrement())
+  brand        String         @db.VarChar(50)
+  model        String         @db.VarChar(100)
+  year         Int?           @db.Int
+  color        String?        @db.VarChar(50)
+  price        Int
+  invoice      invoice?
+}
+
+model cars_for_service {
+  id              Int            @id @default(autoincrement())
+  customer_id     Int            @db.Int
+  car_details     String         @db.VarChar(160)
+  mechanic        String         @db.VarChar(160)
+  customer        customer       @relation(fields: [customer_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model customer {
+  id                  Int                      @id @default(autoincrement())
+  first_name          String?                  @db.VarChar(50)
+  last_name           String?                  @db.VarChar(50)
+  email               String?                  @db.VarChar(100)
+  phone               String?                  @db.VarChar(20)
+  cars_for_service    cars_for_service[]
+  invoice             invoice[]
+}
+
+model invoice {
+  sale_invoice_id      Int              @id @default(autoincrement())
+  customer_id          Int?             @db.Int
+  car_id               Int?             @db.Int      @unique
+  amount               Float?           @db.Double
+  salesperson_id       Int?             @db.Int
+  cars_for_sale        cars_for_sale?   @relation(fields: [car_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  customers            customer?        @relation(fields: [customer_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  salesperson          salesperson?     @relation(fields: [salesperson_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model salesperson {
+  id           Int            @id @default(autoincrement())
+  first_name   String?        @db.VarChar(50)
+  last_name    String?        @db.VarChar(50)
+  invoice invoice[]
+}
