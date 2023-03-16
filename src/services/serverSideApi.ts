@@ -1,5 +1,6 @@
-import { parseCookies } from 'nookies';
 import axios from 'axios';
+import { parseCookies } from 'nookies';
+
 
 export function getServerSideApi(ctx?: any) {
   const { ['nextauth.token']: token } = parseCookies(ctx);
