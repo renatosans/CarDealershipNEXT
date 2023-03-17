@@ -49,28 +49,25 @@ export default function Home({ data }) {
 
         <section className={styles.hero}>
           <h1>Veículos em estoque</h1>
-          <div className={styles.grid}>
-            {cars.map(car => {
-              return <CarsCardSmall key={car.id} car={car} />;
-            })}
+          <div className={styles.grid}>{
+              // cars.map(car => <CarsCardSmall key={car.id} car={car} />)
+          }
           </div>
 
           <Link href="/inventory">
             <a>
-              <Button
-                text="Ver todos os veículos"
-                padding=".7rem 1rem .5rem .5rem"
-                hoverColorClass="textColorFilter"
-              />
+              <Button text="Ver todos os veículos" padding=".7rem 1rem .5rem .5rem" hoverColorClass="textColorFilter" />
             </a>
           </Link>
         </section>
       </main>
     </>
-  );
+  )
 }
 
+/*
 export const getStaticProps: GetStaticProps = async ctx => {
+  
   const serverSideApi = getServerSideApi(ctx);
 
   const data = await serverSideApi
@@ -82,5 +79,6 @@ export const getStaticProps: GetStaticProps = async ctx => {
       data
     },
     revalidate: 60 * 5 // 5 minutes in seconds
-  };
-};
+  }
+}
+*/
