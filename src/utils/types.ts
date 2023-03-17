@@ -19,4 +19,5 @@ export type customerType = {
 export type salespersonType = {
     first_name: string;
     last_name: string;
+    commission: number;
 }

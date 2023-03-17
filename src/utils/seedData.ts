@@ -71,7 +71,23 @@ export const allCars: carType[] = [
 
   export const allSalesperson: salespersonType[] = [
     {
-      first_name: "",
-      last_name: ""
+      first_name: "Candido",
+      last_name: "Martins",
+      commission: 4.30,
+    },
+    {
+      first_name: "Custodio",
+      last_name: "Alcantara",
+      commission: 3.90,
+    },
+    {
+      first_name: "Maria",
+      last_name: "Menezes",
+      commission: 4.10,
+    },
+    {
+      first_name: "Rodolfo",
+      last_name: "Zimmerman",
+      commission: 4.20,
     }
   ]

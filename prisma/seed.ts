@@ -9,7 +9,7 @@ async function main() {
 
     await prisma.cars_for_sale.createMany({ data: allCars })
     await prisma.customer.createMany({ data: allCustomers })
-    // await prisma.salesperson.createMany({ data: allSalesperson })
+    await prisma.salesperson.createMany({ data: allSalesperson })
 }
 
 main()
