@@ -9,8 +9,9 @@ export const allCars: carType[] = [
       year: 2016,
       img: "/img/cars/hyundai_i30.png",
       // description: "1.8 MPI 16V GASOLINA 4P AUTOMATICO",
-      // category: "hatch",
       color: "Azul",
+      mileage: 0,
+      category: "hatch",
       price: 81040
     },
     {
@@ -19,8 +20,9 @@ export const allCars: carType[] = [
       year: 2019,
       img: "/img/cars/honda_fit.png",
       // description: "1.5 LX 16V FLEX 4P AUTOMÁTICO",
-      // category: "hatch",
       color: "Vermelho",
+      mileage: 0,
+      category: "hatch",
       price: 76035
     },
     {
@@ -29,8 +31,9 @@ export const allCars: carType[] = [
       year: 2019,
       img: "/img/cars/toyota_yaris.png",
       // description: "1.3 16V XL Multidrive",
-      // category: "hatch",
       color: "Branco",
+      mileage: 0,
+      category: "hatch",
       price: 84056
     },
     {
@@ -39,8 +42,9 @@ export const allCars: carType[] = [
       year: 2017,
       img: "/img/cars/volkswagen_golf.png",
       // description: "1.4 Tsi Highline Flex Aut.5p",
-      // category: "hatch",
       color: "Branco",
+      mileage: 0,
+      category: "hatch",
       price: 79011
     }
   ]

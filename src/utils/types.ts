@@ -5,6 +5,8 @@ export type carType = {
     year: number;
     img: string;
     color: string;
+    mileage: number;
+    category: string;
     price: number;
 }
 
