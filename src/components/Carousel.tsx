@@ -7,9 +7,9 @@ import SwiperCore, { Navigation, Pagination } from 'swiper';
 SwiperCore.use([Navigation, Pagination]);
 
 
-export function Banner() {
+export function Carousel() {
   return (
-    <Swiper spaceBetween={0} slidesPerView={1} pagination={true} modules={[Pagination]} autoplay={{ delay: 1500, disableOnInteraction: false }} >
+    <Swiper spaceBetween={0} slidesPerView={1} pagination={true} modules={[Navigation, Pagination]} autoplay={{ delay: 1500, disableOnInteraction: false }} >
       <SwiperSlide className='carousel-slide'>
         <img src="/banner-1.png" alt="banner-1" className='carousel-img' />
       </SwiperSlide>

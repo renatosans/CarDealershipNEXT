@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import { useState } from 'react';
 import styles from '../styles/Home.module.scss';
-import { Banner } from '../components/Banner';
+import { Carousel } from '../components/Carousel';
 import { CarsCardSmall } from '../components/CarsCardSmall';
 import { GetStaticProps } from 'next';
 import { Button } from '../components/Button';
@@ -45,7 +45,7 @@ export default function Home({ data }) {
 
       <main>
         <section className={styles.banner}>
-          <Banner />
+          <Carousel />
         </section>
 
         <section className={styles.hero}>
