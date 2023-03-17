@@ -8,6 +8,7 @@ import { Button } from '../components/Button';
 import Link from 'next/link';
 import { getServerSideApi } from '../services/serverSideApi';
 
+
 interface CarProps {
   id: string;
   make: string;
