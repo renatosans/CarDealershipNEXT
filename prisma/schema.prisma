@@ -14,7 +14,9 @@ model cars_for_sale {
   year         Int            @db.Int
   img          String?        @db.VarChar(255)
   color        String?        @db.VarChar(50)
-  price        Int
+  mileage      Int?           @db.Int
+  category     String?        @db.VarChar(50)
+  price        Decimal        @db.Decimal(10, 2)
   invoice      invoice?
 }
 
@@ -38,14 +40,14 @@ model customer {
 }
 
 model invoice {
-  sale_invoice_id      Int              @id @default(autoincrement())
-  customer_id          Int?             @db.Int
-  car_id               Int?             @db.Int      @unique
-  amount               Float?           @db.Double
-  salesperson_id       Int?             @db.Int
-  cars_for_sale        cars_for_sale?   @relation(fields: [car_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
-  customers            customer?        @relation(fields: [customer_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
-  salesperson          salesperson?     @relation(fields: [salesperson_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  id                  Int              @id @default(autoincrement())
+  customer_id         Int              @db.Int
+  salesperson_id      Int              @db.Int
+  car_id              Int              @db.Int      @unique
+  amount              Int              @db.Int
+  customers           customer?        @relation(fields: [customer_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  salesperson         salesperson?     @relation(fields: [salesperson_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  cars_for_sale       cars_for_sale?   @relation(fields: [car_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
 }
 
 model salesperson {
