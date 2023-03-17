@@ -6,10 +6,11 @@ import SwiperCore, { Navigation, Pagination } from 'swiper';
 SwiperCore.use([Navigation, Pagination]);
 
 
-/*
-    <Swiper spaceBetween={0} slidesPerView={1} navigation pagination={{ clickable: true }} loop={true} speed={1500} >
+export function Banner() {
+  return (
+    <Swiper spaceBetween={0} slidesPerView={1} pagination={true} modules={[Pagination]} loop={true} speed={1500} >
       <SwiperSlide>
-        <img src="/banner-1.webp" alt="banner-1" />
+        <img src="/banner-1.png" alt="banner-1" />
       </SwiperSlide>
       <SwiperSlide>
         <img src="/banner-2.png" alt="banner-2" />
@@ -18,11 +19,5 @@ SwiperCore.use([Navigation, Pagination]);
         <img src="/banner-3.png" alt="banner-3" />
       </SwiperSlide>
     </Swiper>
-*/
-
-export function Banner() {
-  return (
-    <>
-    </>
   )
 }
