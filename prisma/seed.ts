@@ -4,7 +4,6 @@ import { allCars, allCustomers, allSalesperson } from '../src/utils/seedData'
 
 // run the command on terminal to populate data
 // >  prisma db seed
-
 async function main() {
 
     await prisma.cars_for_sale.createMany({ data: allCars })
