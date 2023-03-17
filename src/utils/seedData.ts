@@ -68,3 +68,10 @@ export const allCars: carType[] = [
         phone: "99700113"
     }
   ]
+
+  export const allSalesperson: salespersonType[] = [
+    {
+      first_name: "",
+      last_name: ""
+    }
+  ]
