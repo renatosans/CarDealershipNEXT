@@ -11,7 +11,8 @@ model cars_for_sale {
   id           Int            @id @default(autoincrement())
   brand        String         @db.VarChar(50)
   model        String         @db.VarChar(100)
-  year         Int?           @db.Int
+  year         Int            @db.Int
+  img          String?        @db.VarChar(255)
   color        String?        @db.VarChar(50)
   price        Int
   invoice      invoice?
@@ -26,11 +27,12 @@ model cars_for_service {
 }
 
 model customer {
-  id                  Int                      @id @default(autoincrement())
-  first_name          String?                  @db.VarChar(50)
-  last_name           String?                  @db.VarChar(50)
-  email               String?                  @db.VarChar(100)
-  phone               String?                  @db.VarChar(20)
+  id                  Int                 @id @default(autoincrement())
+  first_name          String              @db.VarChar(50)
+  last_name           String              @db.VarChar(50)
+  birth_date          DateTime            @db.Date
+  email               String?             @db.VarChar(100)
+  phone               String?             @db.VarChar(20)
   cars_for_service    cars_for_service[]
   invoice             invoice[]
 }
