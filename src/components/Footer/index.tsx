@@ -19,19 +19,13 @@ export function Footer() {
             <div className={styles.gridItemOne}>
               <ul>
                 <li>
-                  <Link href="/">
-                    <a>Empresa</a>
-                  </Link>
+                  <Link href="/"><a>Empresa</a></Link>
                 </li>
                 <li>
-                  <Link href="/">
-                    <a>Política de Privacidade</a>
-                  </Link>
+                  <Link href="/"><a>Política de Privacidade</a></Link>
                 </li>
                 <li>
-                  <Link href="/login">
-                    <a>Área Interna</a>
-                  </Link>
+                  <Link href="/login"><a>Área Interna</a></Link>
                 </li>
               </ul>
             </div>
