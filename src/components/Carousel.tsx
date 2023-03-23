@@ -9,16 +9,16 @@ SwiperCore.use([Navigation, Pagination]);
 
 export function Carousel() {
   return (
-    <Swiper spaceBetween={0} slidesPerView={1} pagination={true} modules={[Navigation, Pagination]} autoplay={{ delay: 1500, disableOnInteraction: false }} >
-      <SwiperSlide className='carousel-slide'>
-        <img src="/banner-1.png" alt="banner-1" className='carousel-img' />
-      </SwiperSlide>
-      <SwiperSlide className='carousel-slide'>
-        <img src="/banner-2.png" alt="banner-2" className='carousel-img' />
-      </SwiperSlide>
-      <SwiperSlide className='carousel-slide'>
-        <img src="/banner-3.png" alt="banner-3" className='carousel-img' />
-      </SwiperSlide>
-    </Swiper>
+      <Swiper spaceBetween={0} slidesPerView={1} navigation={true} pagination={true} modules={[Navigation, Pagination]} autoplay={{ delay: 1500, disableOnInteraction: false }} >
+        <SwiperSlide className='carousel-slide'>
+          <img style={{width: "100%"}} src="/banner-1.png" alt="banner-1" />
+        </SwiperSlide>
+        <SwiperSlide className='carousel-slide'>
+          <img style={{width: "100%"}} src="/banner-2.png" alt="banner-2" />
+        </SwiperSlide>
+        <SwiperSlide className='carousel-slide'>
+          <img style={{width: "100%"}} src="/banner-3.png" alt="banner-3" />
+        </SwiperSlide>
+      </Swiper>
   )
 }
