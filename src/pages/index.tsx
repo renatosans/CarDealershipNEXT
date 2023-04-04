@@ -1,38 +1,9 @@
 import Head from 'next/head';
+import Link from 'next/link';
 import { useState } from 'react';
 import styles from '../styles/Home.module.scss';
 import { Carousel } from '../components/Carousel';
-import { CarsCardSmall } from '../components/CarsCardSmall';
-import { GetStaticProps } from 'next';
-import { Button } from '../components/Button';
-import Link from 'next/link';
-import { getServerSideApi } from '../services/serverSideApi';
 
-
-interface CarProps {
-  id: string;
-  make: string;
-  model: string;
-  trim: string;
-  year: string;
-  price: number;
-  engine: string;
-  mileage: number;
-  transmission: string;
-  power?: number;
-  fuel: string;
-  city_consumption?: number;
-  road_consumption?: number;
-  type?: string;
-  color?: string;
-  range?: number;
-  images: [
-    {
-      id: string;
-      path: string;
-    }
-  ];
-}
 
 export default function Home({ data }) {
   const [cars, setCars] = useState<CarProps[]>(data);
@@ -40,7 +11,7 @@ export default function Home({ data }) {
   return (
     <>
       <Head>
-        <title>dealership</title>
+        <title>Car Dealership</title>
       </Head>
 
       <main>
@@ -57,7 +28,7 @@ export default function Home({ data }) {
 
           <Link href="/inventory">
             <a>
-              <Button text="Ver todos os veículos" padding=".7rem 1rem .5rem .5rem" hoverColorClass="textColorFilter" />
+              <button>Ver todos os veículos</button>
             </a>
           </Link>
         </section>
