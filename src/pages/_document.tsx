@@ -23,7 +23,7 @@ export default class MyDocument extends Document {
           ></script>
 
           {/* favicon */}
-          <link rel="shortcut icon" href="/favicon.png" type="image/png" />
+          <link rel="shortcut icon" href="/favicon.ico" type="image/png" />
         </Head>
         <body>
           <Main />
