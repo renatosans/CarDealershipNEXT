@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { carType } from '../utils/types'
-import styles from '../styles/CarDetails.module.scss'
+import styles from '../styles/VehicleCard.module.scss'
 
 
 type props = {

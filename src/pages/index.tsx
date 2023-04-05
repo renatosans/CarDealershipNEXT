@@ -36,7 +36,7 @@ export default function Home({ data }) {
           <h1>Veículos em estoque</h1>
           <div className={styles.grid}>{
               cars&&
-              cars.map(car => <VehicleCard key={car.id} car={car} />)
+              cars.map(car => <VehicleCard key={car.id} currency={"R$"} car={car} />)
           }
           </div>
 
