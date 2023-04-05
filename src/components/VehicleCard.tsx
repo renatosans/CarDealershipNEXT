@@ -23,3 +23,5 @@ const VehicleCard = ({car, currency}: props) => {
       </div>
     )
 }
+
+export default VehicleCard
