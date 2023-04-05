@@ -7,7 +7,7 @@ import SwiperCore, { Navigation, Pagination } from 'swiper';
 SwiperCore.use([Navigation, Pagination]);
 
 
-export function Carousel() {
+export default function Carousel() {
   return (
       <Swiper spaceBetween={0} slidesPerView={1} navigation={true} pagination={true} modules={[Navigation, Pagination]} autoplay={{ delay: 1500, disableOnInteraction: false }} >
         <SwiperSlide className='carousel-slide'>

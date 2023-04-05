@@ -1,13 +1,14 @@
-import { types } from 'util/types';
 import Head from 'next/head';
 import Link from 'next/link';
 import { useState } from 'react';
 import styles from '../styles/Home.module.scss';
-import { Carousel } from '../components/Carousel';
+import Carousel from '../components/Carousel';
+import VehicleCard from '../components/VehicleCard';
+import { carType, customerType, salespersonType } from '../utils/types'
 
 
 export default function Home({ data }) {
-  const [cars, setCars] = useState<CarProps[]>(data);
+  const [cars, setCars] = useState<carType[]>(data);
 
   return (
     <>
@@ -23,7 +24,7 @@ export default function Home({ data }) {
         <section className={styles.hero}>
           <h1>Veículos em estoque</h1>
           <div className={styles.grid}>{
-              // cars.map(car => <CarsCardSmall key={car.id} car={car} />)
+              cars.map(car => <VehicleCard key={car.id} car={car} />)
           }
           </div>
 
