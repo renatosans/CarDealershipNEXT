@@ -1,5 +1,6 @@
 
 export type carType = {
+    id?: number;
     brand: string;
     model: string;
     year: number;
@@ -11,6 +12,7 @@ export type carType = {
 }
 
 export type customerType = {
+    id?: number;
     first_name: string;
     last_name: string;
     birth_date: Date;
@@ -19,6 +21,7 @@ export type customerType = {
 }
 
 export type salespersonType = {
+    id?: number;
     first_name: string;
     last_name: string;
     commission: number;
