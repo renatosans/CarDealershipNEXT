@@ -5,7 +5,7 @@ import Carousel from '@/components/Carousel'
 import styles from '@/styles/Home.module.css'
 import VehicleForm from '@/components/VehicleForm'
 import VehicleList from '@/components/VehicleList'
-import { DraggableCore } from 'react-draggable'
+import Draggable from 'react-draggable'
 import toast, { Toaster } from "react-hot-toast"
 
 
@@ -45,11 +45,13 @@ export default function Home() {
       </Head>
       <Toaster/>
       <Carousel/>
-      <DraggableCore>
+      <Draggable>
+      <div >
         <VehicleForm parentRef={{ toggle, getCars }} />
-      </DraggableCore>
+      </div>
+      </Draggable>
       <div className={styles.actions}>
-        <button className={styles.button} onClick={addCar}>Cadastrar veículo</button>
+        <button className={styles.button} onClick={addCar}>Cadastrar veículo</button>        
         <button className={styles.button} onClick={addCustomer}>Cadastrar Cliente</button>
       </div>
       <VehicleList items={cars} desc={'Car for sale. Available'} />
