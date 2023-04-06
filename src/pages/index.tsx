@@ -3,7 +3,9 @@ import { carType } from '@/utils/types'
 import { useState, useEffect } from 'react'
 import Carousel from '@/components/Carousel'
 import styles from '@/styles/Home.module.css'
+import VehicleForm from '@/components/VehicleForm'
 import VehicleList from '@/components/VehicleList'
+import { DraggableCore } from 'react-draggable'
 import toast, { Toaster } from "react-hot-toast"
 
 
@@ -12,18 +14,22 @@ export default function Home() {
   const [cars, setCars] = useState<carType[]>();
 
   useEffect(() => {
+    getCars();
+  }, []);
+
+  const getCars = () => {
     fetch('api/cars')
     .then(resp => resp.json())
     .then(resultSet => setCars(resultSet))
     .catch(error => console.error(error))
-  }, []);
+  }
 
   const toggle = () => {
     setOpen(current => !current);
   }
 
   const addCar = () => {
-    toast.success(`NEW car`);
+    setOpen(true);
   }
 
   const addCustomer = () => {
@@ -39,6 +45,9 @@ export default function Home() {
       </Head>
       <Toaster/>
       <Carousel/>
+      <DraggableCore>
+        <VehicleForm parentRef={{ toggle, getCars }} />
+      </DraggableCore>
       <div className={styles.actions}>
         <button className={styles.button} onClick={addCar}>Cadastrar veículo</button>
         <button className={styles.button} onClick={addCustomer}>Cadastrar Cliente</button>
