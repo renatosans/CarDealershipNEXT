@@ -1,6 +1,7 @@
 # CarDealershipNEXT
 Sistema para concessionária de carros
 
+![screenshot](public/img/screenshot.png)
 
 ## Steps to run the project
 - NPM INSTALL
