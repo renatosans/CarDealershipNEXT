@@ -33,7 +33,7 @@ export default function Home() {
   }
 
   const addCustomer = () => {
-    toast.success(`NEW customer`);
+    setOpen(true);
   }
 
   return (
