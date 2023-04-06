@@ -80,8 +80,6 @@ export const VehicleForm = ({parentRef}: any) => {
             <input type="text" className={styles.input} name="brand" value={car.brand} onChange={onChange} />
             <label htmlFor="model" className={styles.label} >Modelo</label>
             <input type="text" className={styles.input} name="model" value={car.model} onChange={onChange} />
-            <label htmlFor="description" className={styles.label} >Descrição</label>
-            <input type="text" className={styles.input} name="description" value={car.description} onChange={onChange} />
             <label htmlFor="price" className={styles.label} >Preço</label>
             <input type="text" className={styles.input} name="price" value={car.price} onChange={onChange} />
 

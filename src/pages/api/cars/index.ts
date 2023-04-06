@@ -1,7 +1,7 @@
 import fs from 'fs'
 import path from 'path'
-import { carType } from '../../../utils/types'
-import { prisma } from '../../../utils/connection'
+import { carType } from '@/utils/types'
+import { prisma } from '@/utils/connection'
 import type { NextApiRequest, NextApiResponse } from 'next'
 
 
