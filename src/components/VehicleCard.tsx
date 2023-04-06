@@ -15,7 +15,7 @@ const VehicleCard = ({car, currency}: props) => {
 
     return (
       <div className={styles.container}>
-        <Image src={car.img} alt={getInfo(car)} width={250} height={250} />
+        <Image src={car.img} alt={getInfo(car)} width={200} height={150} />
         <h1 className={styles.title}>{getInfo(car)}</h1>
         <span className={styles.price}>{currency} {car.price} </span>
         <p className={styles.desc}>{car.color}</p>
