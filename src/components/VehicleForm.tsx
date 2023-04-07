@@ -5,8 +5,7 @@ import toast, { Toaster, ToastOptions } from 'react-hot-toast'
 import styles from '../styles/VehicleForm.module.css'
 
 
-export const VehicleForm = ({parentRef, opened}: any) => {
-	const [car, setCar] = useState<carType>({
+const emptyCar: carType = {
         brand: "",
         model: "",
         year:  2000,
@@ -15,12 +14,16 @@ export const VehicleForm = ({parentRef, opened}: any) => {
         mileage: 0,
         category: "",
         price: 0,
-	})
+}
 
-    const [image, setImage] = useState({
+const emptyImage = {
         imageFormat: "",
         imageData: "",
-    });
+}
+
+export const VehicleForm = ({parentRef, opened}: any) => {
+	const [car, setCar] = useState<carType>(emptyCar);
+    const [image, setImage] = useState(emptyImage);
 
     const handleSubmit = async (e: FormEvent) => {
 		e.preventDefault();
@@ -40,8 +43,10 @@ export const VehicleForm = ({parentRef, opened}: any) => {
             if(response.ok)
             {
                 toast.success('Registro salvo com sucesso', notification.options as ToastOptions);
+                setCar(emptyCar);
+                setImage(emptyImage);
                 parentRef.getCars();  // faz o refresh da lista de veículos
-                parentRef.toggle();
+                parentRef.toggle();   // Fecha o formulario
                 return;
             }
 
