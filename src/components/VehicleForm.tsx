@@ -6,19 +6,19 @@ import styles from '../styles/VehicleForm.module.css'
 
 
 const emptyCar: carType = {
-        brand: "",
-        model: "",
-        year:  2000,
-        img: "",
-        color: "Prata",
-        mileage: 0,
-        category: "",
-        price: 0,
+    brand: "",
+    model: "",
+    year:  2000,
+    img: "",
+    color: "Prata",
+    mileage: 0,
+    category: "",
+    price: 0,
 }
 
 const emptyImage = {
-        imageFormat: "",
-        imageData: "",
+    imageFormat: "",
+    imageData: "",
 }
 
 export const VehicleForm = ({parentRef, opened}: any) => {
@@ -66,7 +66,8 @@ export const VehicleForm = ({parentRef, opened}: any) => {
 			// Reads the file using the FileReader API
 			const reader = new FileReader();
 			reader.onloadend = () => {
-				const fileData = reader.result.split(';base64,');
+                const result = reader.result as string;
+				const fileData = result.split(';base64,');
 				let formato = fileData[0].replace('data:', '') + ';base64';
                 setImage({imageFormat: formato, imageData: fileData[1]});
 			}
