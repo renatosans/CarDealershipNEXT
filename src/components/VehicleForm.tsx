@@ -5,8 +5,7 @@ import toast, { Toaster, ToastOptions } from 'react-hot-toast'
 import styles from '../styles/VehicleForm.module.css'
 
 
-export const VehicleForm = ({parentRef}: any) => {
-
+export const VehicleForm = ({parentRef, opened}: any) => {
 	const [car, setCar] = useState<carType>({
         brand: "",
         model: "",
@@ -72,8 +71,13 @@ export const VehicleForm = ({parentRef}: any) => {
         setCar({...car, [e.target.name]: e.target.value, });
 	}
 
+    const getVisibility = (open: boolean) => {
+        const visibility = open ? `visible` : `hidden`;
+        return visibility;
+    }
+
     return (
-    <div className={styles.container}>
+    <div className={styles.container} style={ {visibility: getVisibility(opened)} }>
         <Toaster />
         <form onSubmit={handleSubmit} className={styles.form} >
             <label htmlFor="brand" className={styles.label} >Marca</label>

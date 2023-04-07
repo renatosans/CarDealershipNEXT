@@ -33,7 +33,7 @@ export default function Home() {
   }
 
   const addCustomer = () => {
-    setOpen(true);
+    // not implemented yet
   }
 
   return (
@@ -46,8 +46,8 @@ export default function Home() {
       <Toaster/>
       <Carousel/>
       <Draggable>
-      <div >
-        <VehicleForm parentRef={{ toggle, getCars }} />
+      <div>
+        <VehicleForm parentRef={{ toggle, getCars }} opened={open} />
       </div>
       </Draggable>
       <div className={styles.actions}>
