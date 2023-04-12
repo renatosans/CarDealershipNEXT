@@ -15,7 +15,7 @@ const VehicleList = ({items, desc}: props) => {
       <p className={'styles.desc'}>{desc}</p>
       <div className={styles.wrapper}>{
         (items)
-        ? items.map((car: carType) => <VehicleCard car={car} currency={"U$"} />)
+        ? items.map((car: carType) => <VehicleCard car={car} currency={"R$"} />)
         : <p>No item to display</p>
       }
     </div>
