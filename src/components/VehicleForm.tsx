@@ -1,4 +1,4 @@
-import { useState, FormEvent } from 'react'
+ import { useState, FormEvent } from 'react'
 import { carType } from '@/utils/types'
 import { notification } from '@/utils/notification'
 import toast, { Toaster, ToastOptions } from 'react-hot-toast'
@@ -51,10 +51,10 @@ export const VehicleForm = ({parentRef, opened}: any) => {
             }
 
             throw new Error(response.statusText);
-        })  
+        })
         .then((text) => {
             console.log(text);
-        })  
+        })
         .catch((error: any) => {
             toast.error(error.message, notification.options as ToastOptions);
         })
@@ -90,6 +90,13 @@ export const VehicleForm = ({parentRef, opened}: any) => {
             <input type="text" className={styles.input} name="brand" value={car.brand} onChange={onChange} />
             <label htmlFor="model" className={styles.label} >Modelo</label>
             <input type="text" className={styles.input} name="model" value={car.model} onChange={onChange} />
+            <label htmlFor="category" className={styles.label} >Categoria</label>
+            <select className={styles.input} name="category" onChange={onChange}>
+                <option value={"-"}> -Selecione- </option>
+                <option value={"SUV"}>SUV</option>
+                <option value={"hatchback"}>hatchback</option>
+                <option value={"sedan"}>sedan</option>
+            </select>
             <label htmlFor="price" className={styles.label} >Preço</label>
             <input type="text" className={styles.input} name="price" value={car.price} onChange={onChange} />
 
