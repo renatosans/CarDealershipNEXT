@@ -9,7 +9,7 @@ const emptyCustomer: customerType = {
     id: 0,
     first_name: "",
     last_name: "",
-    birth_date: new Date(),
+    birth_date: new Date(),      // TODO: fix date
     email: "",
     phone: "",
 }
