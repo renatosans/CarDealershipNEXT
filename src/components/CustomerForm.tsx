@@ -6,10 +6,9 @@ import styles from '../styles/VehicleForm.module.css'
 
 
 const emptyCustomer: customerType = {
-    id: 0,
     first_name: "",
     last_name: "",
-    birth_date: new Date(),      // TODO: fix date
+    birth_date: new Date("1983-04-04"),      // TODO: fix date
     email: "",
     phone: "",
 }
