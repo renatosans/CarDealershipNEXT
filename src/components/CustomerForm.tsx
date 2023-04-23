@@ -8,7 +8,7 @@ import styles from '../styles/VehicleForm.module.css'
 const emptyCustomer: customerType = {
     first_name: "",
     last_name: "",
-    birth_date: new Date("1983-04-04"),      // TODO: fix date
+    birth_date: new Date("1983-04-04"),      // TODO: fix date,   dar uma olhada em REACT HOOK FORMS
     email: "",
     phone: "",
 }
@@ -70,6 +70,8 @@ export const CustomerForm = ({parentRef, opened}: any) => {
                 <input type="text" className={styles.input} name="first_name" value={customer.first_name} onChange={onChange} />
                 <label htmlFor="last_name" className={styles.label} >Sobrenome</label>
                 <input type="text" className={styles.input} name="last_name" value={customer.last_name} onChange={onChange} />
+                <label htmlFor="birth_date" className={styles.label} >Data Nascimento</label>
+                <input type="date" className={styles.input} name="birth_date" />
                 <label htmlFor="email" className={styles.label} >Email</label>
                 <input type="text" className={styles.input} name="email" value={customer.email} onChange={onChange} />
                 <label htmlFor="phone" className={styles.label} >Número de telefone</label>
