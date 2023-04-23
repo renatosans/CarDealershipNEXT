@@ -45,8 +45,8 @@ export default function Home() {
       <Toaster/>
       <Carousel/>
       <div className={styles.actions}>
-        <button className="button" onClick={addCar}>Cadastrar veículo</button>        
-        <button className="button" onClick={addCustomer}>Cadastrar Cliente</button>
+        <button className={styles.button} onClick={addCar}>Cadastrar veículo</button>        
+        <button className={styles.button} onClick={addCustomer}>Cadastrar Cliente</button>
       </div>
       <Draggable>
         <div><VehicleForm parentRef={{ setForm1Open, getCars }} opened={form1Open} /></div>
